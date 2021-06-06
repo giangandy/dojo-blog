@@ -22,7 +22,7 @@ const Create = () => {
             console.log('new blog added');
             setIsPending(false);
 
-            history.push('/');
+            history.push('/dojo-blog');
         });
 
     }
