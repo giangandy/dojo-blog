@@ -21,7 +21,7 @@ const Create = () => {
         }).then(() => {
             console.log('new blog added');
             setIsPending(false);
-            // history.go(-1);
+
             history.push('/');
         });
 
@@ -31,6 +31,7 @@ const Create = () => {
         <div className="create">
             <h2>Add a New Blog</h2>
             <form onSubmit = {handleSubmit}>
+
                 <label>Blog title:</label>
                 <input
                     type = "text"
@@ -38,12 +39,14 @@ const Create = () => {
                     value={title}
                     onChange = {(e) => setTitle(e.target.value)}
                 />
+
                 <label>Blog body:</label>
                 <textarea
                     required
                     value={body}
                     onChange = {(e) => setBody(e.target.value)}
                 ></textarea>
+
                 <label>Blog author:</label>
                 <select>
                     value={author}
@@ -51,6 +54,7 @@ const Create = () => {
                     <option value = "mario">mario </option>
                     <option value = "yoshi">yoshi </option>
                 </select>
+                
                 { !isPending && <button>Add Blog</button> }
                 { isPending && <button disabled>Adding blog...</button> }
             </form>
